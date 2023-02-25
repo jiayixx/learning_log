@@ -1,0 +1,3 @@
+__pycache__/
+*.sqllite3
+.DS_Store

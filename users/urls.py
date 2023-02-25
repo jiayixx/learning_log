@@ -1,0 +1,13 @@
+
+from django.urls import path , include
+
+from . import views
+
+app_name = 'users' # 不加这个会出现命名空间错误
+
+urlpatterns = [
+    # 包含默认的身份验证url
+    path('',include('django.contrib.auth.urls')),
+    # 注册页面
+    path('register/',views.register,name='register'),
+]

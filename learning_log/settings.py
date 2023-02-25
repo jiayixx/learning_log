@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,6 +27,8 @@ SECRET_KEY = 'django-insecure-@3!7e5g52c#&c1tc@#jac_t5w*q9n1@wffov+tp02le5)d(fuu
 DEBUG = True
 
 ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['*']
+
 
 
 # Application definition
@@ -64,7 +67,7 @@ ROOT_URLCONF = 'learning_log.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -1,4 +1,4 @@
-from django.shortcuts import render , redirect
+from django.shortcuts import render , redirect , get_object_or_404
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
@@ -32,6 +32,7 @@ def topics(request):
 def topic(request,topic_id):
     """显示单个主题及其所有的条目"""
     topic = Topic.objects.get(id=topic_id)
+    topic = get_object_or_404(Topic,id=topic_id)
 
     # 确认请求的主题属于当前用户
     if topic.owner != request.user:
